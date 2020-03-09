@@ -1,0 +1,687 @@
+body{
+  background-color: black;
+  overflow: hidden;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+video{
+  object-position: 0% 0;
+  object-fit: cover;
+  width: 240px;
+  height: 130px;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  left: 50%;
+}
+.videoFrame{
+  display: block;
+  /* videoのheight/2+10、videoの親のwidthー左*2/2+10 */
+  border-width: 75px 70px;
+  border-style: solid;
+  border-top-color: rgb(155, 155, 155);
+  border-bottom-color: rgb(121, 121, 121);
+  border-left-color: rgb(77, 77, 77);
+  border-right-color: rgb(66, 66, 66);
+  position: relative;
+}
+
+/* ~~~~~~~~~オープニング~~~~~~~~~~~~~~~~~~ */
+
+/* transformで後で拡大するために中央基準にしない */
+.matrix{
+  position: absolute;
+  width: 1000px;
+  height: 600px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  overflow: hidden;
+
+
+  display: none;
+
+
+
+}
+/* 内影用 */
+.matrixUpper{
+  width: 1000px;
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 100;
+  box-shadow: 0px 0px 50px 20px rgba(0,0,0,1) inset;
+}
+/* スムーズ落下する4つ */
+.letter{
+  z-index: 10;
+  font-size: 25px;
+  position: absolute;
+  top: 600px;
+  color: white;
+  text-shadow: 0 0 0 white;
+  opacity: 1;
+}
+/* columnはupperとunderとstaggerで共通。 */
+.column{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 17px;
+}
+.upperColumn{
+  z-index: 10;
+}
+.udCell,  .staggerCell{
+  font-size: 25px;
+  text-shadow: 0 -5px 3px #fff2ad;
+  opacity: 0;
+}
+.upCell{
+  font-size: 25px;
+  text-shadow: 0 -8px 5px white;
+  opacity: 0;
+}
+
+/* ~~~~~~~~~~~~~~~~~~メイン（大枠）~~~~~~~~~~~~~~~~~~~~~~*/
+
+#background{
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+
+  /* display: none; */
+
+
+ 
+}
+#main{
+  height: 180%;
+  position: absolute;
+  top: -40%;
+  transform: rotate(0deg);
+  z-index: 100;
+}
+.underCircle, .upperCircle{
+  position: absolute;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  left: 50%;
+}
+.underCircle{
+  background: linear-gradient(to top, #fff2ad 0%, #a3bce2 100%);
+  width: 83%;
+  height: 83%;
+} 
+.upperCircle{
+  box-shadow: 0px 0px 90px 160px black;
+  background-color: black;
+  width: 71%;
+  height: 71%;
+}
+
+
+
+
+
+
+.li-outer{
+  position: absolute;
+  width: 54.5vw;
+}
+.li{
+  transform-origin: left top;
+  padding: 20px 30px 20px 68px;
+  border-radius: 87px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 30px 50px rgba(255, 255, 255, 0.5);
+  max-height: calc(100vh - 170px);
+  overflow-y: auto;
+  display: inline-block;
+}
+/* #li1-outer{
+  top: 50%;
+  left: 100%;
+}
+#li1{
+  transform: translateY(-50%);
+}
+#li2-outer{
+  top: 10.9076%;
+  left: 81.1735%;
+}
+#li2{
+  transform: rotate(-51.43deg) translateY(-50%);
+} */
+
+
+
+
+
+
+
+/* 
+.li{
+  position: absolute;
+  transform-origin: left top;
+  padding: 20px 30px 20px 68px;
+  border-radius: 87px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 30px 50px rgba(255, 255, 255, 0.5);
+  max-height: calc(100vh - 170px);
+  overflow-y: auto;
+  max-width: 54.5vw;
+} */
+#li1-outer{
+  top: 50%;
+  left: 100%;
+}
+#li1{
+  transform: translateY(-50%);
+}
+#li2-outer{
+  top: 10.9076%;
+  left: 81.1735%;
+}
+#li2{
+  transform: rotate(-51.43deg) translateY(-50%);
+}
+#li3-outer{
+  top: 1.2542%;
+  left: 38.8715%;
+}
+#li3{
+  transform: rotate(-102.86deg) translateY(-50%);
+}
+#li4-outer{
+  top: 28.3092%;
+  left: 4.9499%;
+}
+#li4{
+  transform: rotate(-154.29deg) translateY(-50%);
+}
+#li5-outer{
+  top: 71.6908%;
+  left: 4.9499%;
+}
+#li5{
+  transform: rotate(154.29deg) translateY(-50%);
+}
+#li6-outer{
+  top: 98.7458%;
+  left: 38.8715%;
+}
+#li6{
+  transform: rotate(102.86deg) translateY(-50%);
+}
+#li7-outer{
+  top: 89.0924%;
+  left: 81.1735%;
+}
+#li7{
+  transform: rotate(51.43deg) translateY(-50%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+nav{
+  transform: translateY(-50%);
+  position: fixed;
+  top: 45%;
+  left: 3%;
+  color: white;
+  z-index: 100;
+  /* outline: 1px solid white; */
+}
+.logo{
+  position: absolute;
+  
+  /* width: 100px; */
+  /* height: 200px; */
+  /* margin-top: 40px; */
+  font-size: 25px;
+  font-weight: bold;
+  /* z-index: 100; */
+  background: -webkit-linear-gradient(-200deg, #ffffff 0%, #ffffff 10%,#f5b2af 20%, #ffffff 30%, #ffffff 35%, #fff2ad 45%, #ffffff 55%, #7399d2 80%, #fff2ad 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2.4px 2.4px 7px rgb(215, 229, 230), -2.4px -2.4px 7px #f3b2a2;;
+  line-height: 2.2em;
+  font-family: 'Homemade Apple', cursive;
+  /* opacity: .8; */
+  /* overflow: unset; */
+  /* outline: 1px solid white; */
+}
+#logo1{
+  bottom: -17%;
+  left: 20px;
+}
+#logo2{
+  bottom: -22%;
+  left: 75px;
+}
+nav > ul > li{
+  height: 70px;
+  position: relative;
+}
+.listName{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  /* paddingは文字切れ防止に絶対必要 */
+  padding: 5px;
+  font-size: 40px;
+  font-weight: bold;
+  background: -webkit-linear-gradient(-200deg, #ffffff 0%, #ffffff 10%,#f5b2af 20%, #ffffff 30%, #ffffff 35%, #fff2ad 45%, #ffffff 55%, #7399d2 80%, #fff2ad 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2.4px 2.4px 12px white, -2.4px -2.4px 12px #fff2ad;
+  opacity: .4;
+  font-family: 'Nunito';
+}
+#listName1{
+  margin: 0px 0;
+  font-size: 48px;
+  opacity: 1;
+}
+#listName4{
+  letter-spacing: -4px;
+}
+
+.listName:hover{
+  cursor: pointer;
+}
+.columnMain{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 23px;
+  z-index: 50;
+}
+.upperColumnMain{
+  z-index: 10;
+}
+.udCellMain{
+  font-size: 35px;
+  text-shadow: 0 -5px 3px #fff2ad;
+  opacity: 0;
+  color:green;
+}
+.upCellMain{
+  font-size: 35px;
+  text-shadow: 0 -8px 5px white;
+  opacity: 0;
+  color: white;
+}
+.arrow{
+  display: none;
+  position: absolute;
+  bottom: 100px;
+  left: 0px;
+  width: 73px;
+  height: 135px;
+  /* outline: 1px solid red; */
+  z-index: 1000;
+}
+.scroll{
+  transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  font-size: 30px;
+  text-align: center;
+  animation: scroll1 2.5s ease 0s infinite;
+}
+@keyframes scroll1 {
+  0% {font-size: 28px; color: rgb(235, 235, 235);}
+  100% {font-size: 20px; color: rgb(165, 165, 165);}
+}
+.arrowUpper{
+  transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  top:  12%;
+  height: 60px;
+  width: 3px;
+  background-color: rgb(167, 167, 167);
+  animation: arrow1 2.5s ease 0s infinite;
+}
+@keyframes arrow1 {
+  0% {height: 40px; background-color: rgb(235, 235, 235);}
+  100% {height: 100px; background-color: rgb(165, 165, 165);}
+}
+.arrowDowner{
+  transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  top: calc(12% + 40px);
+  height: 10px;
+  width: 10px;
+  border-top: 10px solid #000000;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  animation: arrow2 2.5s ease 0s infinite;
+}
+@keyframes arrow2 {
+  0% {top: calc(12% + 40px); border-top: 10px solid rgb(235, 235, 235);}
+  100% {top: calc(12% + 100px); border-top: 10px solid rgb(165, 165, 165);}
+}
+
+/* ~~~~~~~~~~~~~~~~リスト1~~~~~~~~~~~~~~~~~~~ */
+
+.myInfoWrapper{
+  width: 100%;
+  padding: 10px;
+}
+.myInfoImage{
+  filter: grayscale(80%);
+  width: 39%;
+  display: block;
+  /* margin: 10px auto; */
+  float: left;
+  margin: 0 15px 5px 0;
+}
+.myInfoDescription{
+  /* margin: 10px auto; */
+  /* width: 90%; */
+  /* word-break:break-all; */
+  line-height: 1.4em;
+  color: rgb(14, 15, 17);
+  font-weight: bold;
+  /* background: -webkit-linear-gradient(-200deg, #ffffff 0%, #ffffff 10%,#f5b2af 20%, #ffffff 30%, #ffffff 35%, #fff2ad 45%,  #ffffff 76%, #ffffff 85%,#9db6db 90%,#ffffff 95%,#fff2ad 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  text-shadow: 0.2px 0.2px 3px rgb(150, 150, 150);
+}
+/* ~~~~~~~~~~~~リスト2リスト4~~~~~~~~~~~~~~ */
+
+.gameWrapper, .homepageWrapper{
+  padding: 40px 20px;
+  display: block;
+  /* outline: 1px solid red; */
+}
+.gameVTWrapper, .homepageVTWrapper{
+  padding-bottom: 4px;
+  width: 260px;
+  float: left;
+  margin-right: 20px;
+}
+.gameTitle, .homepageTitle{
+  /* margin: 3px 0px; */
+  padding: 6x 8px;
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 1.5em;
+  background: -webkit-linear-gradient(-200deg, #ffffff 0%, #ffffff 10%,#f5b2af 20%, #ffffff 30%, #ffffff 35%, #fff2ad 45%,  #ffffff 76%, #ffffff 85%,#9db6db 90%,#ffffff 95%,#fff2ad 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 12px white, -2px -2px 12px #fff2ad;
+}
+.gameTitle > i, .homepageTitle > i{
+  -webkit-text-fill-color: black;
+  /* color: black; */
+}
+.gameWrapper:after, .homepageWrapper:after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.gameGithub, .homepageGithub{
+  display: block;
+  /* margin: 3px 0px; */
+  padding: 6px 8px;
+  font-size: 23px;
+  color: rgb(35, 38, 44);
+  font-weight: bold;
+  /* background: -webkit-linear-gradient(-200deg, #ffffff 0%, #ffffff 10%,#f5b2af 20%, #ffffff 30%, #ffffff 35%, #fff2ad 45%,  #ffffff 76%, #ffffff 85%,#9db6db 90%,#ffffff 95%,#fff2ad 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  text-shadow: 1.5px 1.5px 8px white, -1.5px -1.5px 8px #fff2ad;
+}
+.gameText, .homepageText{
+  /* outline: 1px solid red; */
+  font-size: 16px;
+  line-height: 1.4em;
+  width: 100%;
+  color: rgb(14, 15, 17);
+  font-weight: bold;
+  /* background: -webkit-linear-gradient(-200deg, #ffffff 0%, #ffffff 10%,#f5b2af 20%, #ffffff 30%, #ffffff 35%, #fff2ad 45%,  #ffffff 76%, #ffffff 85%,#9db6db 90%,#ffffff 95%,#fff2ad 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  text-shadow: 0.2px 0.2px 3px rgb(150, 150, 150);
+}
+.gameText > span, .homepageText > span{
+  line-height: 2.6em;
+  font-weight: bold;
+}
+/* ~~~~~~~~~~~~~~~~リスト3~~~~~~~~~~~~~~~~~~~ */
+
+
+
+/* ~~~~~~~~~~~~~~~~リスト5~~~~~~~~~~~~~~~~~~~ */
+.qiita{
+  display: block;
+  line-height: 1.8em;
+}
+
+
+/* ~~~~~~~~~~~~~~~~リスト6~~~~~~~~~~~~~~~~~~~ */
+
+
+
+/* ~~~~~~~~~~~~~~~~リスト7~~~~~~~~~~~~~~~~~~~ */
+
+#li6{
+  /* padding: 50px 40px; */
+  font-size: 0;
+  width: 57vw;
+}
+.skillOpening{
+  height: 100vh;
+  position: relative;
+  /* margin-bottom: 160px; */
+}
+.skillOpeningImage{
+  width: 80px;
+  filter: grayscale(91%);
+  position: absolute;
+  transform-origin:center center;
+}
+#skillOpeningImage1{
+  transform: translateX(-50%) translateY(-50%) rotate(64.25deg);
+  width: 100px;
+  top: 46%;
+  left: 20%;
+}
+#skillOpeningImage2{
+  transform: translateX(-50%) translateY(-50%) rotate(-38.55deg);
+  top: 22%;
+  left: 20%;
+}
+#skillOpeningImage3{
+  transform: translateX(-50%) translateY(-50%) rotate(-12.85deg);
+  top: 9%;
+  left: 37%;
+}
+#skillOpeningImage4{
+  transform: translateX(-50%) translateY(-50%) rotate(-12.85deg);
+  top: 9%;
+  left: 63%;
+}
+#skillOpeningImage5{
+  transform: translateX(-50%) translateY(-50%) rotate(-38.55deg);
+  top: 22%;
+  left: 80%;
+}
+#skillOpeningImage6{
+  transform: translateX(-50%) translateY(-50%) rotate(50.25deg);
+  width: 100px;
+  top: 46%;
+  left: 80%;
+}
+#pieChart99{
+  transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  left: 50%;
+  top: 36%;
+}
+.skillWrapper{
+  padding: 30px 25px;
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  font-size: 0rem;
+}
+.skillImageWrapper, .pieChart{
+  vertical-align: middle;
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+}
+.skillImageFrame{
+  width: 85%;
+  border-width: 10px 10px;
+  border-style: solid;
+  border-top-color: rgb(155, 155, 155);
+  border-bottom-color: rgb(121, 121, 121);
+  border-left-color: rgb(77, 77, 77);
+  border-right-color: rgb(66, 66, 66);background-color: rgb(209, 209, 209);
+  position: relative;
+}
+.skillImage{
+  width: 60%;
+  transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+#skillImageHtml{
+  width: 68%;
+  left: 58%;
+}
+#skillImageAws{
+  width: 68%;
+}
+.skillImage:nth-of-type(4){
+  width: 75%;
+}
+.skillDescription{
+  padding-top: 20px;
+  font-size: 19px;
+  text-align: left;
+  line-height: 1.2em;
+}
+
+
+/* ~~~~~~~~~~~~~~~~リスト8~~~~~~~~~~~~~~~~~~~ */
+
+#li7{
+  padding: 80px 35px;
+  position: absolute;
+  transform-origin: left top;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.twitter{
+  display: inline-block;
+  margin: 0 15px;
+}
+.fa-twitter-square{
+  font-size: 100px;
+  color: #55acee;
+}
+.fa-twitter-square:hover{
+  color: #90c3eb;
+}
+.or, #gmail{
+  display: inline-block;
+  height: 100px;
+  line-height: 100px;
+  margin: 0 15px;
+  color: rgb(44, 44, 44);
+  font-weight: bold;
+  font-size: 20px;
+}
+#gmail{
+  display: inline-block;
+  font-size: 34px;
+  position: relative;
+  font-family: 'Nunito';
+}
+#gmail:hover{
+  color: rgba(0,0,0,0.35);
+  cursor: pointer;
+}
+.gmailBright{
+  color: #000000;
+  animation: gmail .2s linear 0s infinite alternate;
+}
+@keyframes gmail{
+  0%{
+    color: #000000;
+  }
+  25%{
+    color: #7a7a7a;
+  }
+  50%{
+    color: #000000;
+  }
+  75%{
+    color: #ffffff;
+  }
+  85%{
+    color: #555555;
+  }
+}
+#gmailButton{
+  display: none;
+  text-align: center;
+  font-size: 21px;
+  line-height: 1.2em;
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  background-color: rgb(76, 76, 76);
+  border-radius: 4px;
+  -webkit-text-fill-color: rgb(165, 165, 165);
+  padding: 11px;
+}
+#gmailButton::after{
+  content: "";
+  transform: translateX(-50%);
+  position: absolute;
+  top: -38%;
+  left: 50%;
+  height: 30px;
+  border: none , 15px solid black, 100% solid black,15px solid black;
+  border-style: solid;
+  border-color:  transparent transparent rgb(76, 76, 76) transparent;
+  border-width: 0 20px 20px 20px;
+}
