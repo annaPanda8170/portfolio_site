@@ -29,12 +29,12 @@ $(function () {
     $("#upperColumn" + i).css({ left: j + "px" });
     $("#underColumn" + i).css({ left: j + "px" });
     for (let k = 1; k <= 24; k++) {
-      $("#upperColumn" + i).append('<div class="upCell upChg' + Math.floor(Math.random() * 7 + 1) +'" id="upCell' + i + '-' + k + '">0</div>');
-      $("#underColumn" + i).append('<div class="udCell udChg' + Math.floor(Math.random() * 7 + 1) +'" id="udCell' + i + '-' + k + '">0</div>');
+      $("#upperColumn" + i).append('<div class="upCell upChg' + Math.floor(Math.random() * 5 + 1) +'" id="upCell' + i + '-' + k + '">0</div>');
+      $("#underColumn" + i).append('<div class="udCell udChg' + Math.floor(Math.random() * 5 + 1) +'" id="udCell' + i + '-' + k + '">0</div>');
     }
   }
   // 必須の9本の他
-  let fallLength = Math.floor(Math.random() * 4 + 19);
+  let fallLength = Math.floor(Math.random() * 2 + 15);
   for (let i = 10; i <= fallLength; i++){
     $matrix.append('<div class="column" id="upperColumn' + i + '"></div>');
     $matrix.append('<div class="column" id="underColumn' + i + '"></div>');
@@ -47,12 +47,12 @@ $(function () {
     $("#upperColumn" + i).css({ left: columnLeft + "px" });
     $("#underColumn" + i).css({ left: columnLeft + "px" });
     for (let j = 1; j <= 24; j++) {
-      $("#upperColumn" + i).append('<div class="upCell upChg' + Math.floor(Math.random() * 7 + 1) +'" id="upCell' + i + '-' + j + '">0</div>');
-      $("#underColumn" + i).append('<div class="udCell udChg' + Math.floor(Math.random() * 7 + 1) +'" id="udCell' + i + '-' + j + '">0</div>');  
+      $("#upperColumn" + i).append('<div class="upCell upChg' + Math.floor(Math.random() * 5 + 1) +'" id="upCell' + i + '-' + j + '">0</div>');
+      $("#underColumn" + i).append('<div class="udCell udChg' + Math.floor(Math.random() * 5 + 1) +'" id="udCell' + i + '-' + j + '">0</div>');  
     }
   }
-  // 場所ずれ薄色のHTML入れ込み
-  let fallStaggerLength = Math.floor(Math.random() * 3 + 14);
+  // 薄色のHTML入れ込み
+  let fallStaggerLength = Math.floor(Math.random() * 2 + 13);
   for (let i = 1; i <= fallStaggerLength; i++){
     $matrix.append('<div class="column" id="staggerColumn' + i + '"></div>');
     let columnTop = Math.floor(Math.random() * 480 + 10)
@@ -61,7 +61,7 @@ $(function () {
     let columnLeft = Math.floor(Math.random() * 994 + 3)
     $("#staggerColumn" + i).css({ left: columnLeft + "px" });
     for (let j = 1; j <= 24; j++) {
-      $("#staggerColumn" + i).append('<div class="staggerCell udChg'+Math.floor(Math.random() * 7 + 1)+'" id="staggerCell'+i+'-'+j+'">0</div>');
+      $("#staggerColumn" + i).append('<div class="staggerCell udChg'+Math.floor(Math.random() * 5 + 1)+'" id="staggerCell'+i+'-'+j+'">0</div>');
     }
   }
 
@@ -122,7 +122,7 @@ $(function () {
     let change = [];
     let num = [];
     let last = [0, 0];
-    for (let i = 1; i <= 7; i++) {
+    for (let i = 1; i <= 5; i++) {
       num[i] = 0;
       let wait = Math.floor(Math.random() * 1000 + 500);
       let repert = Math.floor(5800 / wait);
@@ -239,18 +239,18 @@ $(function () {
   // ~~~HTML、CSS準備~~~
 
   let oneColumnLetterNumber = 0;
-  for (let i = 1; i <= 40; i++){
+  for (let i = 1; i <= 30; i++){
     $("#background").append('<div class="columnMain" id="upperColumnMain' + i + '"></div>');
     $("#background").append('<div class="columnMain" id="underColumnMain' + i + '"></div>');
-    // 上で0.55をつかっているのでちょっと多めに60
+    // 上で0.55をつかっているのでちょっと多めに60%
     let columnMainNumber = Math.floor(Math.random() * 60);
     $("#upperColumnMain" + i).css({ right: columnMainNumber + "%" });
     $("#underColumnMain" + i).css({ right: columnMainNumber + "%" });
     // 切り捨てられた分と一つ外までということで+2
     oneColumnLetterNumber = $(window).outerHeight() / 35 + 2;
     for (let j = 1; j <= oneColumnLetterNumber; j++) {
-      $("#upperColumnMain" + i).append('<div class="upCellMain  upChgMain' + Math.floor(Math.random() * 7 + 1) + '" id="upCellMain' + i + '-' + j + '">0</div>');
-      $("#underColumnMain" + i).append('<div class="udCellMain  udChgMain' + Math.floor(Math.random() * 7 + 1) + '" id="udCellMain' + i + '-' + j + '">0</div>');
+      $("#upperColumnMain" + i).append('<div class="upCellMain  upChgMain' + Math.floor(Math.random() * 5 + 1) + '" id="upCellMain' + i + '-' + j + '">0</div>');
+      $("#underColumnMain" + i).append('<div class="udCellMain  udChgMain' + Math.floor(Math.random() * 5 + 1) + '" id="udCellMain' + i + '-' + j + '">0</div>');
     }
   }
   for (let i = 1; i <= 7; i++){
@@ -266,11 +266,11 @@ $(function () {
     let $udChgMain = [];
     let $upChgMain = [];
     let change = [];
-    for (let i = 1; i <= 7; i++) {
+    for (let i = 1; i <= 5; i++) {
       $upChgMain[i] = $(".upChgMain"+i)
       $udChgMain[i] = $(".udChgMain" + i)
-      let wait = Math.floor(Math.random() * 3000 + 800)
-      if (1600 < wait && wait < 2500){
+      let wait = Math.floor(Math.random() * 4000 + 1200)
+      if (2000 < wait && wait < 2800){
         wait = wait * 1.3;
       }
       change[i] = setInterval(function () {

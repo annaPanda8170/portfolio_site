@@ -59,16 +59,6 @@ video{
   z-index: 100;
   box-shadow: 0px 0px 50px 20px rgba(0,0,0,1) inset;
 }
-/* スムーズ落下する4つ */
-.letter{
-  z-index: 10;
-  font-size: 25px;
-  position: absolute;
-  top: 600px;
-  color: white;
-  text-shadow: 0 0 0 white;
-  opacity: 1;
-}
 /* columnはupperとunderとstaggerで共通。 */
 .column{
   position: absolute;
@@ -131,12 +121,6 @@ video{
   width: 71%;
   height: 71%;
 }
-
-
-
-
-
-
 .li-outer{
   position: absolute;
   width: 54.5vw;
@@ -151,39 +135,6 @@ video{
   overflow-y: auto;
   display: inline-block;
 }
-/* #li1-outer{
-  top: 50%;
-  left: 100%;
-}
-#li1{
-  transform: translateY(-50%);
-}
-#li2-outer{
-  top: 10.9076%;
-  left: 81.1735%;
-}
-#li2{
-  transform: rotate(-51.43deg) translateY(-50%);
-} */
-
-
-
-
-
-
-
-/* 
-.li{
-  position: absolute;
-  transform-origin: left top;
-  padding: 20px 30px 20px 68px;
-  border-radius: 87px;
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 0px 30px 50px rgba(255, 255, 255, 0.5);
-  max-height: calc(100vh - 170px);
-  overflow-y: auto;
-  max-width: 54.5vw;
-} */
 #li1-outer{
   top: 50%;
   left: 100%;
@@ -233,19 +184,6 @@ video{
 #li7{
   transform: rotate(51.43deg) translateY(-50%);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 nav{
   transform: translateY(-50%);
   position: fixed;
@@ -253,26 +191,17 @@ nav{
   left: 3%;
   color: white;
   z-index: 100;
-  /* outline: 1px solid white; */
 }
 .logo{
   position: absolute;
-  
-  /* width: 100px; */
-  /* height: 200px; */
-  /* margin-top: 40px; */
   font-size: 25px;
   font-weight: bold;
-  /* z-index: 100; */
   background: -webkit-linear-gradient(-200deg, #ffffff 0%, #ffffff 10%,#f5b2af 20%, #ffffff 30%, #ffffff 35%, #fff2ad 45%, #ffffff 55%, #7399d2 80%, #fff2ad 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 2.4px 2.4px 7px rgb(215, 229, 230), -2.4px -2.4px 7px #f3b2a2;;
   line-height: 2.2em;
   font-family: 'Homemade Apple', cursive;
-  /* opacity: .8; */
-  /* overflow: unset; */
-  /* outline: 1px solid white; */
 }
 #logo1{
   bottom: -17%;
@@ -310,7 +239,6 @@ nav > ul > li{
 #listName4{
   letter-spacing: -4px;
 }
-
 .listName:hover{
   cursor: pointer;
 }
@@ -343,7 +271,6 @@ nav > ul > li{
   left: 0px;
   width: 73px;
   height: 135px;
-  /* outline: 1px solid red; */
   z-index: 1000;
 }
 .scroll{
@@ -400,20 +327,13 @@ nav > ul > li{
   filter: grayscale(80%);
   width: 39%;
   display: block;
-  /* margin: 10px auto; */
   float: left;
   margin: 0 15px 5px 0;
 }
 .myInfoDescription{
-  /* margin: 10px auto; */
-  /* width: 90%; */
-  /* word-break:break-all; */
   line-height: 1.4em;
   color: rgb(14, 15, 17);
   font-weight: bold;
-  /* background: -webkit-linear-gradient(-200deg, #ffffff 0%, #ffffff 10%,#f5b2af 20%, #ffffff 30%, #ffffff 35%, #fff2ad 45%,  #ffffff 76%, #ffffff 85%,#9db6db 90%,#ffffff 95%,#fff2ad 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
   text-shadow: 0.2px 0.2px 3px rgb(150, 150, 150);
 }
 .myInfoDescription > span{
@@ -428,7 +348,6 @@ nav > ul > li{
 .gameWrapper, .applicationWrapper,.homepageWrapper{
   padding: 40px 20px;
   display: block;
-  /* outline: 1px solid red; */
 }
 .gameVTWrapper, .applicationVTWrapper, .homepageVTWrapper{
   padding-bottom: 4px;
@@ -440,7 +359,6 @@ nav > ul > li{
   filter: grayscale(75%);
 }
 .gameTitle, .applicationTitle, .homepageTitle{
-  /* margin: 3px 0px; */
   padding: 6x 8px;
   font-size: 25px;
   font-weight: bold;
@@ -452,7 +370,6 @@ nav > ul > li{
 }
 .gameTitle > i, .applicationTitle > i, .homepageTitle > i{
   -webkit-text-fill-color: black;
-  /* color: black; */
 }
 .gameWrapper:after, .applicationWrapper:after, .homepageWrapper:after{
   content: "";
@@ -462,18 +379,13 @@ nav > ul > li{
 
 .gameGithub, .applicationGithub, .homepageGithub{
   display: block;
-  /* margin: 3px 0px; */
   padding: 6px 8px;
   font-size: 23px;
   color: rgb(35, 38, 44);
   font-weight: bold;
-  /* background: -webkit-linear-gradient(-200deg, #ffffff 0%, #ffffff 10%,#f5b2af 20%, #ffffff 30%, #ffffff 35%, #fff2ad 45%,  #ffffff 76%, #ffffff 85%,#9db6db 90%,#ffffff 95%,#fff2ad 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
   text-shadow: 1.5px 1.5px 8px white, -1.5px -1.5px 8px #fff2ad;
 }
 .gameText, .applicationText, .homepageText{
-  /* outline: 1px solid red; */
   font-size: 16px;
   line-height: 1.4em;
   width: 100%;
@@ -485,7 +397,9 @@ nav > ul > li{
   line-height: 2.6em;
   font-weight: bold;
 }
-
+.gameTest, .applicationTest, .homepageTest{
+  text-shadow: 1px 1px 5px white, -1px -1px 5px #fff2ad;
+}
 /* ~~~~~~~~~~~~~~~~リスト5~~~~~~~~~~~~~~~~~~~ */
 #bapTitle{
   background: -webkit-linear-gradient(-200deg, #ffffff 0%, #ffffff 10%,#f5b2af 20%, #ffffff 30%, #ffffff 35%, #fff2ad 45%,  #ffffff 76%, #ffffff 85%,#9db6db 90%,#ffffff 95%,#fff2ad 100%);
@@ -533,14 +447,12 @@ nav > ul > li{
 /* ~~~~~~~~~~~~~~~~リスト6~~~~~~~~~~~~~~~~~~~ */
 
 #li6{
-  /* padding: 50px 40px; */
   font-size: 0;
   width: 57vw;
 }
 .skillOpening{
   height: 100vh;
   position: relative;
-  /* margin-bottom: 160px; */
 }
 .skillOpeningImage{
   width: 80px;
