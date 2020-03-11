@@ -523,7 +523,7 @@ nav > ul > li{
   margin: 15px 0px 5px;
   font-size: 18px;
 }
-.bapTitle span{
+.bapTitle  span{
   background: -webkit-linear-gradient(-200deg, #ffffff 0%, #ffffff 10%,#f5b2af 20%, #ffffff 30%, #ffffff 35%, #fff2ad 45%,  #ffffff 76%, #ffffff 85%,#9db6db 90%,#ffffff 95%,#fff2ad 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
