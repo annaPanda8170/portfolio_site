@@ -29,7 +29,8 @@ data_set.each do |data|
   if data[1]!="ツイッター"
     d.get(data[0])
     wait.until {d.find_element(:tag_name, 'div').displayed?}
-    d.save_screenshot("/Users/************/Desktop/#{data[1]}.png")     # ※※ ②保存したい場所を記入してください
+    d.save_screenshot("/Users/***********/***********/#{data[1]}.png")     # ※※ ②保存したい場所を記入してください
+  else
     not_output += 1
   end
 end
