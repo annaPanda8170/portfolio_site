@@ -43,7 +43,7 @@ video{
   overflow: hidden;
 
 
-  display: none;
+  /* display: none; */
 
 
 
@@ -101,7 +101,7 @@ video{
   position: relative;
 
 
-  /* display: none; */
+  display: none;
 
 
  
@@ -147,7 +147,7 @@ video{
   border-radius: 87px;
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0px 0px 30px 50px rgba(255, 255, 255, 0.5);
-  max-height: calc(100vh - 170px);
+  max-height: calc(100vh - 190px);
   overflow-y: auto;
   display: inline-block;
 }
@@ -283,7 +283,7 @@ nav{
   left: 75px;
 }
 nav > ul > li{
-  height: 70px;
+  height: 65px;
   position: relative;
 }
 .listName{
@@ -416,41 +416,51 @@ nav > ul > li{
   -webkit-text-fill-color: transparent; */
   text-shadow: 0.2px 0.2px 3px rgb(150, 150, 150);
 }
-/* ~~~~~~~~~~~~リスト2リスト4~~~~~~~~~~~~~~ */
+.myInfoDescription > span{
+  background: -webkit-linear-gradient(-200deg, #ffffff 0%, #ffffff 10%,#f5b2af 20%, #ffffff 30%, #ffffff 35%, #fff2ad 45%,  #ffffff 76%, #ffffff 85%,#9db6db 90%,#ffffff 95%,#fff2ad 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 12px rgb(194, 194, 194), -2px -2px 12px #c7bc89;
+  opacity: .95;
+}
+/* ~~~~~~~~~~~~リスト2リスト3リスト4~~~~~~~~~~~~~~ */
 
-.gameWrapper, .homepageWrapper{
+.gameWrapper, .applicationWrapper,.homepageWrapper{
   padding: 40px 20px;
   display: block;
   /* outline: 1px solid red; */
 }
-.gameVTWrapper, .homepageVTWrapper{
+.gameVTWrapper, .applicationVTWrapper, .homepageVTWrapper{
   padding-bottom: 4px;
   width: 260px;
   float: left;
   margin-right: 20px;
 }
-.gameTitle, .homepageTitle{
+.applicationVTWrapper video{
+  filter: grayscale(75%);
+}
+.gameTitle, .applicationTitle, .homepageTitle{
   /* margin: 3px 0px; */
   padding: 6x 8px;
-  font-size: 26px;
+  font-size: 25px;
   font-weight: bold;
-  line-height: 1.5em;
+  line-height: 1.7em;
   background: -webkit-linear-gradient(-200deg, #ffffff 0%, #ffffff 10%,#f5b2af 20%, #ffffff 30%, #ffffff 35%, #fff2ad 45%,  #ffffff 76%, #ffffff 85%,#9db6db 90%,#ffffff 95%,#fff2ad 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 12px white, -2px -2px 12px #fff2ad;
 }
-.gameTitle > i, .homepageTitle > i{
+.gameTitle > i, .applicationTitle > i, .homepageTitle > i{
   -webkit-text-fill-color: black;
   /* color: black; */
 }
-.gameWrapper:after, .homepageWrapper:after{
+.gameWrapper:after, .applicationWrapper:after, .homepageWrapper:after{
   content: "";
   clear: both;
   display: block;
 }
 
-.gameGithub, .homepageGithub{
+.gameGithub, .applicationGithub, .homepageGithub{
   display: block;
   /* margin: 3px 0px; */
   padding: 6px 8px;
@@ -462,38 +472,65 @@ nav > ul > li{
   -webkit-text-fill-color: transparent; */
   text-shadow: 1.5px 1.5px 8px white, -1.5px -1.5px 8px #fff2ad;
 }
-.gameText, .homepageText{
+.gameText, .applicationText, .homepageText{
   /* outline: 1px solid red; */
   font-size: 16px;
   line-height: 1.4em;
   width: 100%;
   color: rgb(14, 15, 17);
   font-weight: bold;
-  /* background: -webkit-linear-gradient(-200deg, #ffffff 0%, #ffffff 10%,#f5b2af 20%, #ffffff 30%, #ffffff 35%, #fff2ad 45%,  #ffffff 76%, #ffffff 85%,#9db6db 90%,#ffffff 95%,#fff2ad 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
   text-shadow: 0.2px 0.2px 3px rgb(150, 150, 150);
 }
-.gameText > span, .homepageText > span{
+.gameText > span, .applicationText > span, .homepageText > span{
   line-height: 2.6em;
   font-weight: bold;
 }
-/* ~~~~~~~~~~~~~~~~リスト3~~~~~~~~~~~~~~~~~~~ */
-
-
 
 /* ~~~~~~~~~~~~~~~~リスト5~~~~~~~~~~~~~~~~~~~ */
-.qiita{
-  display: block;
-  line-height: 1.8em;
+#bapTitle{
+  background: -webkit-linear-gradient(-200deg, #ffffff 0%, #ffffff 10%,#f5b2af 20%, #ffffff 30%, #ffffff 35%, #fff2ad 45%,  #ffffff 76%, #ffffff 85%,#9db6db 90%,#ffffff 95%,#fff2ad 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 12px white, -2px -2px 12px #fff2ad;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0 auto;
+  line-height: 2em;
+  text-align: center;
+  font-family: 'Nunito';
+}
+#bapDescription{
+  line-height: 1.7em;
+  margin: 20px 5px;
+  color: rgb(14, 15, 17);
+  font-weight: bold;
+  text-shadow: 0.2px 0.2px 3px rgb(150, 150, 150);
+}
+.bapQiita, .bapGithub{
+  line-height: 2em;
+  padding: 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(35, 38, 44);
+  text-shadow: 1px 1px 8px white, -1px -1px 8px #fff2ad;
+}
+.bapTitle{
+  color: rgb(14, 15, 17);
+  font-weight: bold;
+  opacity: .8;
+  text-shadow: 1px 1px 8px rgb(131, 131, 131), -1px -1px 8px #bbb38e;
+  line-height: 1.7em;
+  margin: 15px 0px 5px;
+  font-size: 18px;
+}
+.bapTitle span{
+  background: -webkit-linear-gradient(-200deg, #ffffff 0%, #ffffff 10%,#f5b2af 20%, #ffffff 30%, #ffffff 35%, #fff2ad 45%,  #ffffff 76%, #ffffff 85%,#9db6db 90%,#ffffff 95%,#fff2ad 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 12px white, -2px -2px 12px #fff2ad;
 }
 
-
 /* ~~~~~~~~~~~~~~~~リスト6~~~~~~~~~~~~~~~~~~~ */
-
-
-
-/* ~~~~~~~~~~~~~~~~リスト7~~~~~~~~~~~~~~~~~~~ */
 
 #li6{
   /* padding: 50px 40px; */
@@ -570,7 +607,8 @@ nav > ul > li{
   border-top-color: rgb(155, 155, 155);
   border-bottom-color: rgb(121, 121, 121);
   border-left-color: rgb(77, 77, 77);
-  border-right-color: rgb(66, 66, 66);background-color: rgb(209, 209, 209);
+  border-right-color: rgb(66, 66, 66);
+  background-color: rgb(209, 209, 209);
   position: relative;
 }
 .skillImage{
@@ -592,13 +630,21 @@ nav > ul > li{
 }
 .skillDescription{
   padding-top: 20px;
-  font-size: 19px;
+  font-size: 16px;
   text-align: left;
   line-height: 1.2em;
 }
+.skillDescription > span {
+  font-size: 20px;
+  line-height: 2.3em;
+  font-weight: bold;
+  background: -webkit-linear-gradient(-200deg, #ffffff 0%, #ffffff 10%,#f5b2af 20%, #ffffff 30%, #ffffff 35%, #fff2ad 45%,  #ffffff 76%, #ffffff 85%,#9db6db 90%,#ffffff 95%,#fff2ad 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 12px white, -2px -2px 12px #fff2ad;
+}
 
-
-/* ~~~~~~~~~~~~~~~~リスト8~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~リスト7~~~~~~~~~~~~~~~~~~~ */
 
 #li7{
   padding: 80px 35px;
