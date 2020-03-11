@@ -1,4 +1,6 @@
-# まず gem install selenium-webdriver してください
+# 以下の①と②を処理して普通にターミナルで実行してください
+
+# ※※ ① gem install selenium-webdriver してください
 
 require 'selenium-webdriver'
 require 'securerandom'
@@ -27,7 +29,7 @@ data_set.each do |data|
   if data[1]!="ツイッター"
     d.get(data[0])
     wait.until {d.find_element(:tag_name, 'div').displayed?}
-    d.save_screenshot("/Users/handaryouhei/Desktop/#{data[1]}.png")
+    d.save_screenshot("/Users/************/Desktop/#{data[1]}.png")     # ※※ ②保存したい場所を記入してください
     not_output += 1
   end
 end
