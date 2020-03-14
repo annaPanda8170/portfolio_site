@@ -511,7 +511,9 @@ $(function () {
           $main.stop().animate2({ transform: "rotate(" + deg + "deg)" }, 2500);
           $(".listName").stop().animate({ fontSize: "40px", opacity: ".4"}, 300);
           $("#listName" + i).stop().animate({ fontSize: "48px", opacity: "1" }, 750);
-          if ($(window).outerHeight() - 170 == $("#li" + i).outerHeight() && $("#arrow"+i).css("display", "none")) {
+          console.log($(window).outerHeight() - 170)
+          console.log($("#li" + i).outerHeight())
+          if ($(window).outerHeight() - 190 == $("#li" + i).outerHeight() && $("#arrow"+i).css("display", "none")) {
             setTimeout(function () {
               $("#arrow" + i).stop().fadeIn(800);
             }, 2500)
