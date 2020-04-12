@@ -1,0 +1,42 @@
+html{
+  background-color: rgb(245,243,242);
+}
+
+#titleWrapper, .contents{
+  max-width: 1300px;
+  width: 70vw;
+  min-width: 200px;
+  margin: 50px auto 50px;
+  outline: 1px solid red;
+}
+h1{
+  font-size: 40px;
+  font-weight: bold;
+  padding: 10px 0;
+}
+#titleWrapper>a{
+  display: inline-block;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px 15px 10px 0;
+  /* color: black; */
+}
+.contents::after{
+  content: "";
+  display: block;
+  clear: left;
+}
+.contentsTitle{
+  padding: 10px 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+.contentsVideo{
+  width: 400px;
+  float: left;
+  padding: 0 10px 10px 0;
+}
+
+.contentsVideo:focus{
+  outline:none;
+}
