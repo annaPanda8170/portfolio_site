@@ -74,26 +74,41 @@
         </div>
       </div>
       <div id="li3-outer" class="li-outer">
-      <div id="li3" class="li">
-        <div class="applicationWrapper">
-          <div class="applicationVTWrapper">
-            <div class="videoFrame"> 
-              <video src="movie_expendables.mp4" class="applicationVideo" autoplay loop muted></video>
+        <div id="li3" class="li">
+          <div class="applicationWrapper">
+            <div class="applicationVTWrapper">
+              <a href="http://restaurant-batch-management.xyz"  target="_blank" rel="noopener noreferrer" class="videoFrame" data="レス管理-1"> 
+                <video src="movie_ryotei.mp4" class="applicationVideo" autoplay loop muted></video>
+              </a>
+              <a href="http://restaurant-batch-management.xyz"  target="_blank" rel="noopener noreferrer" data="レス管理-2"> 
+                <h3 class="applicationTitle">レストラン<br>一括管理アプリ <i class="fas fa-link"></i></h3>
+              </a>
+              <a href="https://github.com/annaPanda8170/ryotei"  target="_blank" rel="noopener noreferrer" class="applicationGithub" data="レス管理GitHub">GitHub <i class="fab fa-github-alt"></i></a>
             </div>
-            <h3 class="applicationTitle">消耗品管理アプリ</h3>
-            <a href="https://github.com/annaPanda8170/expendables"  target="_blank" rel="noopener noreferrer" class="applicationGithub" data="消耗品GitHub">GitHub <i class="fab fa-github-alt"></i></a>
+            <p class="applicationText"><span>【概要】</span><br>レストラン管理の全てをここに集約します。<br>予約・会計・スタッフ・ドリンク・顧客の管理の機能を担います。
+              <br><span>【言語・デプロイ環境】</span><br>Rails EC2<br><span>【仕様】</span><br><a href="https://github.com/annaPanda8170/ryotei/blob/master/README.md"  target="_blank" rel="noopener noreferrer" data="レス管理GitHub">ReadMe<i class="fab fa-github-alt"></i></a>をご覧ください。
+              <br><span>【工夫点・作成記】</span>
+              <br>予約に詳細・登録・編集機能はありますが、show・new・editアクションはありません。全てをindex画面で受け付け、Ajaxを大量に使用しています。
+              <br>予約チャート表で、予約帯をドラッグ&ドロップして部屋や時間を変更できます。UIの操作とデータベースのバリデーションが一致するように神経を使っています。
+              <br>現状は架空の料亭の管理をイメージして構築していますが、後々どんなレストランにも合わせてカスタマイズできるように抽象化するつもりです。</p>
           </div>
-          <p class="applicationText"><span>【概要】</span><br>家のティッシュやラップ、必要なときにないとイライラするけど、あまり沢山は抱えたくない。<br>家の全消耗品の管理をします。
-            <br><span>【言語・デプロイ環境】</span><br>Rails<br><span>【仕様】</span><br>半年と決めたら、半年に一度まとめて買えばいいように保有最適数を自動計算します。楽天の買い物かごに入れるところまで自動で行い、最後に楽天に行って確認してボタン一つで決済できます。
-            <br><span>【工夫点・作成記】</span>
-            <br>このアプリと楽天の自身のアカウントとの行き来にスクレイピングを使っています。
-            <br>このアプリから楽天にログインが必要なので楽天のパスワードを入力しなければなりませんが、マスクして安全にしています。
-            <br>スクレイピングは処理に時間がかかるので、Active Jobというバックグラウンド処理を行う技術を使っています。
-            <br>※こだわて作ったアプリでしたが、楽天が突然このスクレイピングを弾く仕様にしてしまったので、使えなくなってしまいました。</p>
+          <div class="applicationWrapper">
+            <div class="applicationVTWrapper">
+              <div class="videoFrame"> 
+                <video src="movie_expendables.mp4" class="applicationVideoExpendables" autoplay loop muted></video>
+              </div>
+              <h3 class="applicationTitle">消耗品管理アプリ</h3>
+              <a href="https://github.com/annaPanda8170/expendables"  target="_blank" rel="noopener noreferrer" class="applicationGithub" data="消耗品GitHub">GitHub <i class="fab fa-github-alt"></i></a>
+            </div>
+            <p class="applicationText"><span>【概要】</span><br>家のティッシュやラップ、必要なときにないとイライラするけど、あまり沢山は抱えたくない。<br>家の全消耗品の管理をします。
+              <br><span>【言語・デプロイ環境】</span><br>Rails<br><span>【仕様】</span><br>半年と決めたら、半年に一度まとめて買えばいいように保有最適数を自動計算します。楽天の買い物かごに入れるところまで自動で行い、最後に楽天に行って確認してボタン一つで決済できます。
+              <br><span>【工夫点・作成記】</span>
+              <br>このアプリと楽天の自身のアカウントとの行き来にスクレイピングを使っています。
+              <br>このアプリから楽天にログインが必要なので楽天のパスワードを入力しなければなりませんが、マスクして安全にしています。
+              <br>スクレイピングは処理に時間がかかるので、Active Jobというバックグラウンド処理を行う技術を使っています。
+              <br>※こだわて作ったアプリでしたが、楽天が突然このスクレイピングを弾く仕様にしてしまったので、使えなくなってしまいました。</p>
+          </div>
         </div>
-        
-        <!-- <div class="list">45</div> -->
-      </div>
       </div>
       <div id="li4-outer" class="li-outer">
         <div id="li4" class="li">

@@ -43,7 +43,7 @@ video{
   overflow: hidden;
 
 
-  /* display: none; */
+  display: none;
 
 
 
@@ -91,7 +91,7 @@ video{
   position: relative;
 
 
-  display: none;
+  /* display: none; */
 
 
  
@@ -355,7 +355,7 @@ nav > ul > li{
   float: left;
   margin-right: 20px;
 }
-.applicationVTWrapper video{
+.applicationVideoExpendables{
   filter: grayscale(75%);
 }
 .gameTitle, .applicationTitle, .homepageTitle{
