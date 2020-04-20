@@ -43,7 +43,7 @@ video{
   overflow: hidden;
 
 
-  /* display: none; */
+  display: none;
 
 
 
@@ -91,7 +91,7 @@ video{
   position: relative;
 
 
-  display: none;
+  /* display: none; */
 
 
  

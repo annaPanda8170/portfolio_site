@@ -14,223 +14,223 @@ $(function () {
     });
   };
 
-  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                // オープニング
-  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  // // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //               // オープニング
+  // // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  // ~~~HTML、CSS準備~~~
+  // // ~~~HTML、CSS準備~~~
 
-  // 先導の白、追いかけのカラフルのHTML入れ込み、スムーズ落下の場所指定
-  let $matrix = $(".matrix")
-  // 必須の9本
-  for (let i = 1, j = 357; i <= 9; i++, j = j + 34){
-    $matrix.append('<div class="column" id="upperColumn' + i + '"></div>');
-    $matrix.append('<div class="column" id="underColumn' + i + '"></div>');
-    $("#upperColumn" + i).css({ left: j + "px" });
-    $("#underColumn" + i).css({ left: j + "px" });
-    for (let k = 1; k <= 24; k++) {
-      $("#upperColumn" + i).append('<div class="upCell upChg' + Math.floor(Math.random() * 5 + 1) +'" id="upCell' + i + '-' + k + '">0</div>');
-      $("#underColumn" + i).append('<div class="udCell udChg' + Math.floor(Math.random() * 5 + 1) +'" id="udCell' + i + '-' + k + '">0</div>');
-    }
-  }
-  // 必須の9本の他
-  let fallLength = Math.floor(Math.random() * 2 + 15);
-  for (let i = 10; i <= fallLength; i++){
-    $matrix.append('<div class="column" id="upperColumn' + i + '"></div>');
-    $matrix.append('<div class="column" id="underColumn' + i + '"></div>');
-    let randum = Math.floor(Math.random() * 40);
-    // 9本と重なるのは避ける
-    if ( randum > 21 && randum%2 == 1) {
-      randum = randum + 18;      
-    }
-    let columnLeft = 17 * randum;
-    $("#upperColumn" + i).css({ left: columnLeft + "px" });
-    $("#underColumn" + i).css({ left: columnLeft + "px" });
-    for (let j = 1; j <= 24; j++) {
-      $("#upperColumn" + i).append('<div class="upCell upChg' + Math.floor(Math.random() * 5 + 1) +'" id="upCell' + i + '-' + j + '">0</div>');
-      $("#underColumn" + i).append('<div class="udCell udChg' + Math.floor(Math.random() * 5 + 1) +'" id="udCell' + i + '-' + j + '">0</div>');  
-    }
-  }
-  // 薄色のHTML入れ込み
-  let fallStaggerLength = Math.floor(Math.random() * 2 + 13);
-  for (let i = 1; i <= fallStaggerLength; i++){
-    $matrix.append('<div class="column" id="staggerColumn' + i + '"></div>');
-    let columnTop = Math.floor(Math.random() * 480 + 10)
-    // upper、underは必ずmatrixの一番上からであるがstaggerはここでカラムの縦位置を設定
-    $("#staggerColumn" + i).css({ top: columnTop + "px" });
-    let columnLeft = Math.floor(Math.random() * 994 + 3)
-    $("#staggerColumn" + i).css({ left: columnLeft + "px" });
-    for (let j = 1; j <= 24; j++) {
-      $("#staggerColumn" + i).append('<div class="staggerCell udChg'+Math.floor(Math.random() * 5 + 1)+'" id="staggerCell'+i+'-'+j+'">0</div>');
-    }
-  }
+  // // 先導の白、追いかけのカラフルのHTML入れ込み、スムーズ落下の場所指定
+  // let $matrix = $(".matrix")
+  // // 必須の9本
+  // for (let i = 1, j = 357; i <= 9; i++, j = j + 34){
+  //   $matrix.append('<div class="column" id="upperColumn' + i + '"></div>');
+  //   $matrix.append('<div class="column" id="underColumn' + i + '"></div>');
+  //   $("#upperColumn" + i).css({ left: j + "px" });
+  //   $("#underColumn" + i).css({ left: j + "px" });
+  //   for (let k = 1; k <= 24; k++) {
+  //     $("#upperColumn" + i).append('<div class="upCell upChg' + Math.floor(Math.random() * 5 + 1) +'" id="upCell' + i + '-' + k + '">0</div>');
+  //     $("#underColumn" + i).append('<div class="udCell udChg' + Math.floor(Math.random() * 5 + 1) +'" id="udCell' + i + '-' + k + '">0</div>');
+  //   }
+  // }
+  // // 必須の9本の他
+  // let fallLength = Math.floor(Math.random() * 2 + 15);
+  // for (let i = 10; i <= fallLength; i++){
+  //   $matrix.append('<div class="column" id="upperColumn' + i + '"></div>');
+  //   $matrix.append('<div class="column" id="underColumn' + i + '"></div>');
+  //   let randum = Math.floor(Math.random() * 40);
+  //   // 9本と重なるのは避ける
+  //   if ( randum > 21 && randum%2 == 1) {
+  //     randum = randum + 18;      
+  //   }
+  //   let columnLeft = 17 * randum;
+  //   $("#upperColumn" + i).css({ left: columnLeft + "px" });
+  //   $("#underColumn" + i).css({ left: columnLeft + "px" });
+  //   for (let j = 1; j <= 24; j++) {
+  //     $("#upperColumn" + i).append('<div class="upCell upChg' + Math.floor(Math.random() * 5 + 1) +'" id="upCell' + i + '-' + j + '">0</div>');
+  //     $("#underColumn" + i).append('<div class="udCell udChg' + Math.floor(Math.random() * 5 + 1) +'" id="udCell' + i + '-' + j + '">0</div>');  
+  //   }
+  // }
+  // // 薄色のHTML入れ込み
+  // let fallStaggerLength = Math.floor(Math.random() * 2 + 13);
+  // for (let i = 1; i <= fallStaggerLength; i++){
+  //   $matrix.append('<div class="column" id="staggerColumn' + i + '"></div>');
+  //   let columnTop = Math.floor(Math.random() * 480 + 10)
+  //   // upper、underは必ずmatrixの一番上からであるがstaggerはここでカラムの縦位置を設定
+  //   $("#staggerColumn" + i).css({ top: columnTop + "px" });
+  //   let columnLeft = Math.floor(Math.random() * 994 + 3)
+  //   $("#staggerColumn" + i).css({ left: columnLeft + "px" });
+  //   for (let j = 1; j <= 24; j++) {
+  //     $("#staggerColumn" + i).append('<div class="staggerCell udChg'+Math.floor(Math.random() * 5 + 1)+'" id="staggerCell'+i+'-'+j+'">0</div>');
+  //   }
+  // }
 
-  // ~~~定義~~~
+  // // ~~~定義~~~
 
-  // 以下二つの関数で使用する共通の変数。タイトルの文字列
-  let name = [["a", "n", "n", "a", "P", "a", "n", "d", "a"], ["p", "o", "r", "t", "f", "o", "l", "i", "o"], ["s", "i", "t", "e"]]
-  // underを消して、必要ならタイトルを入れ込みする関数
-  function underChange(recordNumber) {
-    let proccesed = 0;
-    for (let j = 10, k = 0; j <= 14; j += 2, k++) {
-      for (let i = 1; i <= name[k].length; i++) {
-        if (used[recordNumber][0] == i && used[recordNumber][1] == j) {
-          $("#udCell" + used[recordNumber][0] + "-" + used[recordNumber][1]).html(name[k][(i - 1)]).css({ textShadow: "none" }).animate({ opacity: "1" }, 2000);
-          proccesed = 1;
-        }
-      }
-    }
-    if (proccesed == 0) {
-      $("#udCell" + used[recordNumber][0] + "-" + used[recordNumber][1]).animate({ opacity: "0" }, 2000);
-    }
-  }
-  // 消し込み関数（何個消そうか,いつ消し始めようか） 
-  function putOutLetters(number, wait) {
-    wait = wait + Math.floor(Math.random() * 1000)
-    for (let i = 0; i < number; i++) {
-      setTimeout(function () {
-        // 記録したうちのどれかランダムで指定
-        let recordNumber = Math.floor(Math.random() * used.length);
-        let stRecordNumber = Math.floor(Math.random() * usedSt.length);
-        let stRecordNumberCell = Math.floor(Math.random() * 23 + 1);
-        underChange(recordNumber);
-        $("#staggerCell" + usedSt[stRecordNumber] + "-" + stRecordNumberCell).animate({ opacity: "0" }, 2000);
-      }, wait);
-    }
-  }
-  // 最後に念のためにタイトルを再入れ込みする関数（lettersChangeない設置）
-  function underChangeFinal() {
-    for (let j = 10, k = 0; j <= 14; j += 2, k++) {
-      for (let i = 1; i <= name[k].length; i++) {
-        $("#udCell" + i + "-" + j).html(name[k][(i - 1)]).css({ textShadow: "none" }).animate({ opacity: "1" }, 2000);
-      }
-    }
-  }
-  // 最初から実行される文字変え関数
-  function lettersChange() {
-    let letters = [0, 1, "a", "n", "p", "d", "f", "i", "s"];
-    let colors = ["#fff2ad", "#f5b2af", "#a3bce2", "#d4acd0"];
-    let letters_length = letters.length;
-    let colors_length = colors.length
-    let $udChg = [];
-    let $upChg = [];
-    for (let i = 1; i <= 7; i++) {
-      $udChg[i] = $(".udChg" + i);
-      $upChg[i] = $(".upChg" + i);
-    }
-    // underの色と文字変えupperの文字だけ変え
-    let change = [];
-    let num = [];
-    let last = [0, 0];
-    for (let i = 1; i <= 5; i++) {
-      num[i] = 0;
-      let wait = Math.floor(Math.random() * 1000 + 500);
-      let repert = Math.floor(5800 / wait);
-      change[i] = setInterval(function () {
-        num[i]++;
-        $udChg[i].html(letters[Math.floor(Math.random() * (letters_length-1))]).css({ color: colors[Math.floor(Math.random() * (colors_length-1))] })
-        $upChg[i].html(letters[Math.floor(Math.random() * (letters_length-1))])
-        if (num[i] >= repert) {
-          clearInterval(change[i])
-        }
-      }, wait)
-    }
-    setTimeout(function () {
-      underChangeFinal()
-    }, 5800)
-  }
-  // upperとunderが落ちる関数
-  // under文字列の記録。（upperはすでに消えているので不要）[カラム番号,セル番号]
-  let used = [];
-  function fall(timing, columnNumber, cellNumber, length) {
-    // セルの縦に入りきる文字数+1（25）で繰り返す（つまり落ちてゆく）
-    for (let i = 0; i < 25 - (cellNumber - 1); i++){
-      // 一つ下に落ちる時間設定
-      let wait = i * 115;
-      if (columnNumber == 5) {
-        timing = 100;
-        cellNumber = 1;
-        length = 22;
-      } else if (columnNumber == 2) {
-        timing = 2300;
-        cellNumber = 1;
-        length = 22;
-      }
-      let waitTime = timing + wait;
-      setTimeout(function () {
-        // upperは一個前を消しつつ最後まで落ちる
-        $("#upCell" + columnNumber + "-" + (cellNumber + i - 1)).css({ opacity: "0" });
-        $("#upCell" + columnNumber + "-" + (cellNumber + i)).css({ opacity: "1" });
-        // underは一個前を消さず残しつつ指定されたlength分落ちる
-        if (i < length) {
-          $("#udCell" + columnNumber + "-" + (cellNumber + i)).css({ opacity: "0.7" });
-          used.unshift([columnNumber, cellNumber + i]);
-        }
-      },waitTime)
-    }
-  }
-  // staggerが落ちる関数
-  // stagger文字列の記録。カラムのみ（staggerはカラムの縦位置をランダムで指定しているのでcellNumberが不要）
-  let usedSt = [];
-  // staggerはカラムの縦位置をランダムで指定しているのでcellNumberが不要
-  function fallStagger(timing, columnNumber, length) {
-    // こっちはupperがないので、セルの縦に入りきる文字数ぴったり（24）で繰り返す
-    for (let i = 0; i < 24; i++){
-      let wait = i * 115;
-      let waitTime = timing + wait;
-      setTimeout(function () {
-        // $(".staggerCell" + columnNumber + "-" + (i - 1)).css({ opacity: "0" });
-        if (i < length) {
-          $("#staggerCell" + columnNumber + "-" + i).css({ opacity: "0.3" });
-          usedSt.unshift(columnNumber);
-        }
-      },waitTime)
-    }
-  }
+  // // 以下二つの関数で使用する共通の変数。タイトルの文字列
+  // let name = [["a", "n", "n", "a", "P", "a", "n", "d", "a"], ["p", "o", "r", "t", "f", "o", "l", "i", "o"], ["s", "i", "t", "e"]]
+  // // underを消して、必要ならタイトルを入れ込みする関数
+  // function underChange(recordNumber) {
+  //   let proccesed = 0;
+  //   for (let j = 10, k = 0; j <= 14; j += 2, k++) {
+  //     for (let i = 1; i <= name[k].length; i++) {
+  //       if (used[recordNumber][0] == i && used[recordNumber][1] == j) {
+  //         $("#udCell" + used[recordNumber][0] + "-" + used[recordNumber][1]).html(name[k][(i - 1)]).css({ textShadow: "none" }).animate({ opacity: "1" }, 2000);
+  //         proccesed = 1;
+  //       }
+  //     }
+  //   }
+  //   if (proccesed == 0) {
+  //     $("#udCell" + used[recordNumber][0] + "-" + used[recordNumber][1]).animate({ opacity: "0" }, 2000);
+  //   }
+  // }
+  // // 消し込み関数（何個消そうか,いつ消し始めようか） 
+  // function putOutLetters(number, wait) {
+  //   wait = wait + Math.floor(Math.random() * 1000)
+  //   for (let i = 0; i < number; i++) {
+  //     setTimeout(function () {
+  //       // 記録したうちのどれかランダムで指定
+  //       let recordNumber = Math.floor(Math.random() * used.length);
+  //       let stRecordNumber = Math.floor(Math.random() * usedSt.length);
+  //       let stRecordNumberCell = Math.floor(Math.random() * 23 + 1);
+  //       underChange(recordNumber);
+  //       $("#staggerCell" + usedSt[stRecordNumber] + "-" + stRecordNumberCell).animate({ opacity: "0" }, 2000);
+  //     }, wait);
+  //   }
+  // }
+  // // 最後に念のためにタイトルを再入れ込みする関数（lettersChangeない設置）
+  // function underChangeFinal() {
+  //   for (let j = 10, k = 0; j <= 14; j += 2, k++) {
+  //     for (let i = 1; i <= name[k].length; i++) {
+  //       $("#udCell" + i + "-" + j).html(name[k][(i - 1)]).css({ textShadow: "none" }).animate({ opacity: "1" }, 2000);
+  //     }
+  //   }
+  // }
+  // // 最初から実行される文字変え関数
+  // function lettersChange() {
+  //   let letters = [0, 1, "a", "n", "p", "d", "f", "i", "s"];
+  //   let colors = ["#fff2ad", "#f5b2af", "#a3bce2", "#d4acd0"];
+  //   let letters_length = letters.length;
+  //   let colors_length = colors.length
+  //   let $udChg = [];
+  //   let $upChg = [];
+  //   for (let i = 1; i <= 7; i++) {
+  //     $udChg[i] = $(".udChg" + i);
+  //     $upChg[i] = $(".upChg" + i);
+  //   }
+  //   // underの色と文字変えupperの文字だけ変え
+  //   let change = [];
+  //   let num = [];
+  //   let last = [0, 0];
+  //   for (let i = 1; i <= 5; i++) {
+  //     num[i] = 0;
+  //     let wait = Math.floor(Math.random() * 1000 + 500);
+  //     let repert = Math.floor(5800 / wait);
+  //     change[i] = setInterval(function () {
+  //       num[i]++;
+  //       $udChg[i].html(letters[Math.floor(Math.random() * (letters_length-1))]).css({ color: colors[Math.floor(Math.random() * (colors_length-1))] })
+  //       $upChg[i].html(letters[Math.floor(Math.random() * (letters_length-1))])
+  //       if (num[i] >= repert) {
+  //         clearInterval(change[i])
+  //       }
+  //     }, wait)
+  //   }
+  //   setTimeout(function () {
+  //     underChangeFinal()
+  //   }, 5800)
+  // }
+  // // upperとunderが落ちる関数
+  // // under文字列の記録。（upperはすでに消えているので不要）[カラム番号,セル番号]
+  // let used = [];
+  // function fall(timing, columnNumber, cellNumber, length) {
+  //   // セルの縦に入りきる文字数+1（25）で繰り返す（つまり落ちてゆく）
+  //   for (let i = 0; i < 25 - (cellNumber - 1); i++){
+  //     // 一つ下に落ちる時間設定
+  //     let wait = i * 115;
+  //     if (columnNumber == 5) {
+  //       timing = 100;
+  //       cellNumber = 1;
+  //       length = 22;
+  //     } else if (columnNumber == 2) {
+  //       timing = 2300;
+  //       cellNumber = 1;
+  //       length = 22;
+  //     }
+  //     let waitTime = timing + wait;
+  //     setTimeout(function () {
+  //       // upperは一個前を消しつつ最後まで落ちる
+  //       $("#upCell" + columnNumber + "-" + (cellNumber + i - 1)).css({ opacity: "0" });
+  //       $("#upCell" + columnNumber + "-" + (cellNumber + i)).css({ opacity: "1" });
+  //       // underは一個前を消さず残しつつ指定されたlength分落ちる
+  //       if (i < length) {
+  //         $("#udCell" + columnNumber + "-" + (cellNumber + i)).css({ opacity: "0.7" });
+  //         used.unshift([columnNumber, cellNumber + i]);
+  //       }
+  //     },waitTime)
+  //   }
+  // }
+  // // staggerが落ちる関数
+  // // stagger文字列の記録。カラムのみ（staggerはカラムの縦位置をランダムで指定しているのでcellNumberが不要）
+  // let usedSt = [];
+  // // staggerはカラムの縦位置をランダムで指定しているのでcellNumberが不要
+  // function fallStagger(timing, columnNumber, length) {
+  //   // こっちはupperがないので、セルの縦に入りきる文字数ぴったり（24）で繰り返す
+  //   for (let i = 0; i < 24; i++){
+  //     let wait = i * 115;
+  //     let waitTime = timing + wait;
+  //     setTimeout(function () {
+  //       // $(".staggerCell" + columnNumber + "-" + (i - 1)).css({ opacity: "0" });
+  //       if (i < length) {
+  //         $("#staggerCell" + columnNumber + "-" + i).css({ opacity: "0.3" });
+  //         usedSt.unshift(columnNumber);
+  //       }
+  //     },waitTime)
+  //   }
+  // }
 
-  // ~~~実行~~~
+  // // ~~~実行~~~
 
-  // 文字と文字の色入れ替え
-  lettersChange();
-  // 残す文字と重なる部分、実行
-  for (let i = 1; i <= 9; i++) {
-    let timing = Math.floor(Math.random() * 3300 + 500);
-    let cellNumber = Math.floor(Math.random() * 5 + 5);
-    let length = Math.floor(Math.random() * 11 + 14-(cellNumber-1));
-    fall(timing, i, cellNumber, length);
-  }
-  // その他実行
-  for (let i = 10; i <= fallLength; i++){
-    let timing = Math.floor(Math.random() * 3300 + 300);
-    let cellNumber = Math.floor(Math.random() * 18 + 1);
-    let length = Math.floor(Math.random() * 14 + 4);
-    // 長いのをちょっと減らす
-    if (length > 8 && length % 2 == 0) {
-      length-= 3
-    }
-    fall(timing, i, cellNumber, length);
-  }
-  // stagger実行
-  for (let i = 1; i <= fallStaggerLength; i++){
-    let timing = Math.floor(Math.random() * 1900 + 700);
-    let columnNumber = i;
-    let length = Math.floor(Math.random() * 16 + 4);
-    fallStagger(timing, columnNumber, length);
-  }
-  // 数段階で文字を消す
-  for (let i = 300, j = 2300; i <= 500; i += 20, j += 280){
-    putOutLetters(i, j);
-  }
-  setTimeout(function () {
-    for (let i = 0; i < used.length; i++) {
-      underChange(i);
-    }
-    for (let i = 0; i < usedSt.length; i++){
-      for (let j = 0; j < 24; j++) {
-        $("#staggerCell" + usedSt[i] + "-" + j).animate({ opacity: "0" }, 2100);
-      }
-    }
-  }, 5900);
+  // // 文字と文字の色入れ替え
+  // lettersChange();
+  // // 残す文字と重なる部分、実行
+  // for (let i = 1; i <= 9; i++) {
+  //   let timing = Math.floor(Math.random() * 3300 + 500);
+  //   let cellNumber = Math.floor(Math.random() * 5 + 5);
+  //   let length = Math.floor(Math.random() * 11 + 14-(cellNumber-1));
+  //   fall(timing, i, cellNumber, length);
+  // }
+  // // その他実行
+  // for (let i = 10; i <= fallLength; i++){
+  //   let timing = Math.floor(Math.random() * 3300 + 300);
+  //   let cellNumber = Math.floor(Math.random() * 18 + 1);
+  //   let length = Math.floor(Math.random() * 14 + 4);
+  //   // 長いのをちょっと減らす
+  //   if (length > 8 && length % 2 == 0) {
+  //     length-= 3
+  //   }
+  //   fall(timing, i, cellNumber, length);
+  // }
+  // // stagger実行
+  // for (let i = 1; i <= fallStaggerLength; i++){
+  //   let timing = Math.floor(Math.random() * 1900 + 700);
+  //   let columnNumber = i;
+  //   let length = Math.floor(Math.random() * 16 + 4);
+  //   fallStagger(timing, columnNumber, length);
+  // }
+  // // 数段階で文字を消す
+  // for (let i = 300, j = 2300; i <= 500; i += 20, j += 280){
+  //   putOutLetters(i, j);
+  // }
+  // setTimeout(function () {
+  //   for (let i = 0; i < used.length; i++) {
+  //     underChange(i);
+  //   }
+  //   for (let i = 0; i < usedSt.length; i++){
+  //     for (let j = 0; j < 24; j++) {
+  //       $("#staggerCell" + usedSt[i] + "-" + j).animate({ opacity: "0" }, 2100);
+  //     }
+  //   }
+  // }, 5900);
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                       //  メイン
@@ -448,16 +448,16 @@ $(function () {
   setTimeout(function () {
 
 
-    $matrix.animate2({ transform: "scale(532, 532)" }, 2800);
+    // $matrix.animate2({ transform: "scale(532, 532)" }, 2800);
 
 
 
     setTimeout(function () {
       
-      $main.css( "transform", "rotate(-100deg)");
-      $matrix.css({ display: "none" });
-      $("#background").fadeIn(6000);
-      $main.stop().animate2({ transform: "rotate(0deg)" }, 3500);
+      // $main.css( "transform", "rotate(-100deg)");
+      // $matrix.css({ display: "none" });
+      // $("#background").fadeIn(6000);
+      // $main.stop().animate2({ transform: "rotate(0deg)" }, 3500);
       let deg = 0;
       let nowList = 1;
       let oneDeg = 51.43;
@@ -559,9 +559,9 @@ $(function () {
       pieChart(4, skillImageWrapperWidth, "rgb(189, 0, 4)", "rgb(185, 110, 111)", "rgb(50, 50, 50)", 1)
       pieChart(5, skillImageWrapperWidth, "rgb(107, 171, 224)", "rgb(107, 171, 224)", "rgb(50, 50, 50)", 1)
       pieChart(6, skillImageWrapperWidth, "rgb(252, 177, 18)", "rgb(253, 219, 146)", "rgb(50, 50, 50)", 1)
-    // }, 0)
-    }, 800)
+    }, 0)
+    // }, 800)
 
-  }, 9000)  
-  // }, 0)
+  // }, 9000)  
+  }, 0)
 });
