@@ -454,14 +454,18 @@ $(function () {
 
     setTimeout(function () {
       
+      
+      
       $main.css( "transform", "rotate(-100deg)");
       $matrix.css({ display: "none" });
       $("#background").fadeIn(6000);
       $main.stop().animate2({ transform: "rotate(0deg)" }, 3500);
+
+      
+      
       let deg = 0;
       let nowList = 1;
       let oneDeg = 51.43;
-
       // mainを正方形にする
       $main.outerWidth($main.outerHeight());
       // mainの位置決定してリサイズしても追いかけるように
