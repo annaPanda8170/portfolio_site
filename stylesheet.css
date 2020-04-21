@@ -472,29 +472,35 @@ nav > ul > li{
 }
 #skillOpeningImage2{
   transform: translateX(-50%) translateY(-50%) rotate(-38.55deg);
-  top: 22%;
+  top: 26%;
   left: 20%;
 }
 #skillOpeningImage3{
   transform: translateX(-50%) translateY(-50%) rotate(-12.85deg);
   top: 9%;
-  left: 37%;
+  left: 29%;
 }
 #skillOpeningImage4{
   transform: translateX(-50%) translateY(-50%) rotate(-12.85deg);
   top: 9%;
-  left: 63%;
+  left: 71%;
 }
 #skillOpeningImage5{
   transform: translateX(-50%) translateY(-50%) rotate(-38.55deg);
-  top: 22%;
-  left: 80%;
+  top: 26%;
+  left: 85%;
 }
 #skillOpeningImage6{
   transform: translateX(-50%) translateY(-50%) rotate(50.25deg);
   width: 100px;
   top: 46%;
-  left: 80%;
+  left: 85%;
+}
+#skillOpeningImage7{
+  transform: translateX(-50%) translateY(-50%) rotate(46deg);
+  width: 100px;
+  top: 7%;
+  left: 50%;
 }
 #pieChart99{
   transform: translateX(-50%) translateY(-50%);
