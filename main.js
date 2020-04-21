@@ -448,22 +448,21 @@ $(function () {
   setTimeout(function () {
 
 
-
     $matrix.animate2({ transform: "scale(532, 532)" }, 2800);
 
 
 
     setTimeout(function () {
       
-
-
+      
+      
       $main.css( "transform", "rotate(-100deg)");
       $matrix.css({ display: "none" });
       $("#background").fadeIn(6000);
       $main.stop().animate2({ transform: "rotate(0deg)" }, 3500);
 
-
-
+      
+      
       let deg = 0;
       let nowList = 1;
       let oneDeg = 51.43;
