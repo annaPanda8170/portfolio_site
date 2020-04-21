@@ -31,7 +31,7 @@ video{
 /* ~~~~~~~~~オープニング~~~~~~~~~~~~~~~~~~ */
 
 /* transformで後で拡大するために中央基準にしない */
-.matrix{
+#matrix{
   position: absolute;
   width: 1000px;
   height: 600px;
@@ -43,13 +43,13 @@ video{
   overflow: hidden;
 
 
-  display: none;
+  /* display: none; */
 
 
 
 }
 /* 内影用 */
-.matrixUpper{
+#matrixUpper{
   width: 1000px;
   height: 600px;
   position: absolute;
@@ -91,7 +91,7 @@ video{
   position: relative;
 
 
-  /* display: none; */
+  display: none;
 
 
  
