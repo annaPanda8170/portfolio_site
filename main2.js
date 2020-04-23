@@ -446,8 +446,11 @@ $(function () {
     let columnMainNumber = Math.floor(Math.random() * 60);
     $("#upperColumnMain" + i).css({ right: columnMainNumber + "%" });
     $("#underColumnMain" + i).css({ right: columnMainNumber + "%" });
-    // 切り捨てられた分と一つ外までということで+2
+    // 切り捨てられた分と一つ外までということで+2。フルHDのサイズに合わせて最低29文字
     oneColumnLetterNumber = $(window).outerHeight() / 35 + 2;
+    if (oneColumnLetterNumber < 29) {
+      oneColumnLetterNumber = 29;
+    }
     for (let j = 1; j <= oneColumnLetterNumber; j++) {
       $("#upperColumnMain" + i).append('<div class="upCellMain  upChgMain' + Math.floor(Math.random() * 5 + 1) + '" id="upCellMain' + i + '-' + j + '">0</div>');
       $("#underColumnMain" + i).append('<div class="udCellMain  udChgMain' + Math.floor(Math.random() * 5 + 1) + '" id="udCellMain' + i + '-' + j + '">0</div>');
@@ -524,6 +527,7 @@ $(function () {
       $main.outerWidth($main.outerHeight());
       $main.css({ right: $(window).outerWidth() * 0.62 });
       $(window).resize(function () {
+        $main.outerWidth($main.outerHeight());
         $main.css({ right: $(window).outerWidth() * 0.62 });
       })
       // 一回目の流れ星
