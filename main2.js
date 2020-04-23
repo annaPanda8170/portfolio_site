@@ -526,10 +526,6 @@ $(function () {
       // mainを正方形にする
       $main.outerWidth($main.outerHeight());
       $main.css({ right: $(window).outerWidth() * 0.62 });
-      $(window).resize(function () {
-        $main.outerWidth($main.outerHeight());
-        $main.css({ right: $(window).outerWidth() * 0.62 });
-      })
       // 一回目の流れ星
       setTimeout(function () {
         fallMain(oneColumnLetterNumber);
@@ -568,6 +564,11 @@ $(function () {
       pieChart(5, skillImageWrapperWidth, "rgb(107, 171, 224)", "rgb(107, 171, 224)", "rgb(50, 50, 50)", 1)
       pieChart(6, skillImageWrapperWidth, "rgb(252, 177, 18)", "rgb(253, 219, 146)", "rgb(50, 50, 50)", 1)
       pieChart(7, skillImageWrapperWidth, "rgb(25, 97, 163)", "rgb(152, 170, 192)", "rgb(50, 50, 50)", 1)
+      $(window).resize(function () {
+        $main.outerWidth($main.outerHeight());
+        $main.css({ right: $(window).outerWidth() * 0.62 });
+        $(".skillImageFrame").outerHeight($(".skillImageFrame").outerWidth());
+      })
     // }, 0)
     }, 800)
 
