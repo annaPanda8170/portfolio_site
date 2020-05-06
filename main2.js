@@ -214,49 +214,6 @@ function listHoverAndArrow($main, deg,nowList,oneDeg) {
       }
       nowList = i;
       $main.stop().animate2({ transform: "rotate(" + deg + "deg)" }, 2500);
-
-
-
-
-
-      // $(".listName").stop().animate({ opacity: ".4" }, 300);
-      // $("#listName" + i).stop().animate({ opacity: "1" }, 750);
-
-
-
-      // $(".listName").stop().animate({ fontSize: "40px",  opacity: ".4"  }, 300);
-      // $("#listName" + i).stop().animate({ fontSize: "48px", opacity: "1"  }, 750);
-
-      
-
-
-      
-      // $window_height = $(window).height()
-      // if ( $window_width <= 600) {
-      //   $(".listName").stop().animate({ fontSize: "20px",  opacity: ".4"  }, 300);
-      //   $("#listName" + i).stop().animate({  fontSize: "21.5px",  opacity: "1"  }, 750);
-      // }else if ( $window_height <= 370) {
-      //   $(".listName").stop().animate({ fontSize: "24px",  opacity: ".4"  }, 300);
-      //   $("#listName" + i).stop().animate({ opacity: "1"  }, 750);
-      // }else if ( 370 < $window_height && $window_height <= 411) {
-      //   $(".listName").stop().animate({ fontSize: "30px",  opacity: ".4"  }, 300);
-      //   $("#listName" + i).stop().animate({ opacity: "1"  }, 750);
-      // }else if ( 411 < $window_height && $window_height <= 550) {
-      //   $(".listName").stop().animate({ fontSize: "33px",  opacity: ".4"  }, 300);
-      //   $("#listName" + i).stop().animate({ fontSize: "40px", opacity: "1"  }, 750);
-      // }else if ( 550 < $window_height ) {
-      //   $(".listName").stop().animate({ fontSize: "40px",  opacity: ".4"  }, 300);
-      //   $("#listName" + i).stop().animate({ fontSize: "48px", opacity: "1"  }, 750);
-      // }
-
-
-
-
-
-
-
-
-
       if ($(window).outerHeight() - 190 == $("#li" + i).outerHeight() && $("#arrow" + i).css("display", "none")) {
         setTimeout(function () {
           $("#arrow" + i).stop().fadeIn(800);
@@ -267,20 +224,9 @@ function listHoverAndArrow($main, deg,nowList,oneDeg) {
   $window_width = $(window).width()
   for (let i = 1; i <= 7; i++) {
     $("#listName" + i).on('mouseenter', function () {
-      // $(".listName").stop().animate({ opacity: ".4" }, 300);
-      // $("#listName" + i).stop().animate({ opacity: "1" }, 750);
       if ( $window_width <= 767) {
         $(".listName").stop().animate({ fontSize: "23px",  opacity: ".4"  }, 300);
         $("#listName" + i).stop().animate({ fontSize: "24px", opacity: "1" }, 750);
-      // }else if ( $window_height <= 370) {
-      //   $(".listName").stop().animate({ fontSize: "24px",  opacity: ".4"  }, 300);
-      //   $("#listName" + i).stop().animate({ opacity: "1"  }, 750);
-      // }else if ( 370 < $window_height && $window_height <= 411) {
-      //   $(".listName").stop().animate({ fontSize: "30px",  opacity: ".4"  }, 300);
-      //   $("#listName" + i).stop().animate({ opacity: "1"  }, 750);
-      // }else if ( 411 < $window_height && $window_height <= 550) {
-      //   $(".listName").stop().animate({ fontSize: "33px",  opacity: ".4"  }, 300);
-      //   $("#listName" + i).stop().animate({ fontSize: "40px", opacity: "1"  }, 750);
       }else {
         $(".listName").stop().animate({ fontSize: "40px",  opacity: ".4"  }, 300);
         $("#listName" + i).stop().animate({ fontSize: "48px", opacity: "1"  }, 750);
@@ -529,70 +475,70 @@ $(function () {
                 // 動き・イベント
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  // // ##########オープニング################################################
+  // ##########オープニング################################################
 
-  // // 文字と文字の色入れ替え
-  // lettersChange();
-  // // 残す文字と重なる部分、実行
-  // for (let i = 1; i <= 9; i++) {
-  //   let timing = Math.floor(Math.random() * 3300 + 500);
-  //   let cellNumber = Math.floor(Math.random() * 5 + 5);
-  //   let length = Math.floor(Math.random() * 11 + 14-(cellNumber-1));
-  //   fall(timing, i, cellNumber, length);
-  // }
-  // // その他実行
-  // for (let i = 10; i <= fallLength; i++){
-  //   let timing = Math.floor(Math.random() * 3300 + 300);
-  //   let cellNumber = Math.floor(Math.random() * 18 + 1);
-  //   let length = Math.floor(Math.random() * 14 + 4);
-  //   // 長いのをちょっと減らす
-  //   if (length > 8 && length % 2 == 0) {
-  //     length-= 3
-  //   }
-  //   fall(timing, i, cellNumber, length);
-  // }
-  // // stagger実行
-  // for (let i = 1; i <= fallStaggerLength; i++){
-  //   let timing = Math.floor(Math.random() * 1900 + 700);
-  //   let columnNumber = i;
-  //   let length = Math.floor(Math.random() * 16 + 4);
-  //   fallStagger(timing, columnNumber, length);
-  // }
-  // // 数段階で文字を消す
-  // for (let i = 300, j = 2300; i <= 500; i += 20, j += 280){
-  //   putOutLetters(i, j);
-  // }
-  // setTimeout(function () {
-  //   // usedを一通り全部
-  //   for (let i = 0; i < used.length; i++) {
-  //     underChange(i);
-  //   }
-  //   // usedStを一通り全部
-  //   for (let i = 0; i < usedSt.length; i++){
-  //     for (let j = 0; j < 24; j++) {
-  //       $("#staggerCell" + usedSt[i] + "-" + j).animate({ opacity: "0" }, 2100);
-  //     }
-  //   }
-  // }, 5900);
+  // 文字と文字の色入れ替え
+  lettersChange();
+  // 残す文字と重なる部分、実行
+  for (let i = 1; i <= 9; i++) {
+    let timing = Math.floor(Math.random() * 3300 + 500);
+    let cellNumber = Math.floor(Math.random() * 5 + 5);
+    let length = Math.floor(Math.random() * 11 + 14-(cellNumber-1));
+    fall(timing, i, cellNumber, length);
+  }
+  // その他実行
+  for (let i = 10; i <= fallLength; i++){
+    let timing = Math.floor(Math.random() * 3300 + 300);
+    let cellNumber = Math.floor(Math.random() * 18 + 1);
+    let length = Math.floor(Math.random() * 14 + 4);
+    // 長いのをちょっと減らす
+    if (length > 8 && length % 2 == 0) {
+      length-= 3
+    }
+    fall(timing, i, cellNumber, length);
+  }
+  // stagger実行
+  for (let i = 1; i <= fallStaggerLength; i++){
+    let timing = Math.floor(Math.random() * 1900 + 700);
+    let columnNumber = i;
+    let length = Math.floor(Math.random() * 16 + 4);
+    fallStagger(timing, columnNumber, length);
+  }
+  // 数段階で文字を消す
+  for (let i = 300, j = 2300; i <= 500; i += 20, j += 280){
+    putOutLetters(i, j);
+  }
+  setTimeout(function () {
+    // usedを一通り全部
+    for (let i = 0; i < used.length; i++) {
+      underChange(i);
+    }
+    // usedStを一通り全部
+    for (let i = 0; i < usedSt.length; i++){
+      for (let j = 0; j < 24; j++) {
+        $("#staggerCell" + usedSt[i] + "-" + j).animate({ opacity: "0" }, 2100);
+      }
+    }
+  }, 5900);
 
   // ##########メイン###########################################################
   
   setTimeout(function () {
 
 
-    // // 文字拡大してオープニング終了
-    // $matrix.animate2({ transform: "scale(532, 532)" }, 2800);
+    // 文字拡大してオープニング終了
+    $matrix.animate2({ transform: "scale(532, 532)" }, 2800);
 
 
     setTimeout(function () {
       let $main = $("#main")
 
 
-      // // 回転を見せるためにちょっと前から準備
-      // $main.css( "transform", "rotate(-100deg)");
-      // $matrix.remove();
-      // $("#background").fadeIn(6000);
-      // $main.stop().animate2({ transform: "rotate(0deg)" }, 3500);
+      // 回転を見せるためにちょっと前から準備
+      $main.css( "transform", "rotate(-100deg)");
+      $matrix.remove();
+      $("#background, #logo_container").fadeIn(6000);
+      $main.stop().animate2({ transform: "rotate(0deg)" }, 3500);
 
 
       // mainを正方形にする
@@ -605,14 +551,6 @@ $(function () {
       } else if (main_height <= 1550){
         $("#upperCircle").css({width: "71%", height: "71%"})
       }
-
-
-
-
-
-
-
-
       $window_width = $(window).width()
       if ($window_width <= 767) {
         $main.css({ right: $(window).outerWidth() * 0.7 });
@@ -620,19 +558,6 @@ $(function () {
       } else {
         $main.css({ right: $(window).outerWidth() * 0.62 });
       }
-      // if ( $window_width <= 600) {
-      //   $(".listName").stop().animate({ fontSize: "20px",  opacity: ".4"  }, 300);
-      // }
-
-
-
-
-
-
-
-
-
-      // 一回目の流れ星
       setTimeout(function () {
         fallMain(oneColumnLetterNumber);
       }, 3000)
@@ -682,8 +607,6 @@ $(function () {
         }
         $main.css({ right: $(window).outerWidth() * 0.62 });
         $(".skillImageFrame").outerHeight($(".skillImageFrame").outerWidth());
-
-
         $window_width = $(window).width()
         if ($window_width <= 767) {
           $main.css({ right: $(window).outerWidth() * 0.7 });
@@ -693,77 +616,22 @@ $(function () {
           $main.css({ right: $(window).outerWidth() * 0.62 });
           $(".listName").stop().animate({ fontSize: "40px",  opacity: ".4"  }, 300);
         }
-
-        // if ( $window_width <= 600) {
-        //   $(".listName").stop().animate({ fontSize: "20px",  opacity: ".4"  }, 300);
-        // }else if ( $window_height <= 370) {
-        //   $(".listName").css({ fontSize: "24px",  opacity: ".4"  }, 300);
-        // }else if ( 370 < $window_height && $window_height <= 411) {
-        //   $(".listName").css({ fontSize: "30px",  opacity: ".4"  }, 300);
-        // }else if ( 411 < $window_height && $window_height <= 550) {
-        //   $(".listName").css({ fontSize: "33px",  opacity: ".4"  }, 300);
-        // } else if (550 < $window_height) {
-        //   $(".listName").css({ fontSize: "40px",  opacity: ".4"  }, 300);
-        // }
-
-
-        // $window_height = $(window).height()
-        // if ( $window_width <= 600) {
-        //   $(".listName").stop().animate({ fontSize: "20px",  opacity: ".4"  }, 300);
-        // }else if ( $window_height <= 370) {
-        //   $(".listName").css({ fontSize: "24px",  opacity: ".4"  }, 300);
-        // }else if ( 370 < $window_height && $window_height <= 411) {
-        //   $(".listName").css({ fontSize: "30px",  opacity: ".4"  }, 300);
-        // }else if ( 411 < $window_height && $window_height <= 550) {
-        //   $(".listName").css({ fontSize: "33px",  opacity: ".4"  }, 300);
-        // } else if (550 < $window_height) {
-        //   $(".listName").css({ fontSize: "40px",  opacity: ".4"  }, 300);
-        // }
-        // $window_width = $(window).width()
-        // if ($window_width <= 600) {
-        //   $main.css({ right: $(window).outerWidth() * 0.72 });
-        // } else {
-        //   $main.css({ right: $(window).outerWidth() * 0.62 });
-        // }
         for (let i = 1; i <= 7; i++) {
           $("#listName" + i).on('mouseenter', function () {
-            // $(".listName").stop().animate({ opacity: ".4" }, 300);
-            // $("#listName" + i).stop().animate({ opacity: "1" }, 750);
             if ( $window_width <= 767) {
               $(".listName").stop().animate({ fontSize: "23px",  opacity: ".4"  }, 300);
               $("#listName" + i).stop().animate({ fontSize: "24px", opacity: "1" }, 750);
-            // }else if ( $window_height <= 370) {
-            //   $(".listName").stop().animate({ fontSize: "24px",  opacity: ".4"  }, 300);
-            //   $("#listName" + i).stop().animate({ opacity: "1"  }, 750);
-            // }else if ( 370 < $window_height && $window_height <= 411) {
-            //   $(".listName").stop().animate({ fontSize: "30px",  opacity: ".4"  }, 300);
-            //   $("#listName" + i).stop().animate({ opacity: "1"  }, 750);
-            // }else if ( 411 < $window_height && $window_height <= 550) {
-            //   $(".listName").stop().animate({ fontSize: "33px",  opacity: ".4"  }, 300);
-            //   $("#listName" + i).stop().animate({ fontSize: "40px", opacity: "1"  }, 750);
             }else {
               $(".listName").stop().animate({ fontSize: "40px",  opacity: ".4"  }, 300);
               $("#listName" + i).stop().animate({ fontSize: "48px", opacity: "1"  }, 750);
             }
           })
         }
-
-
-
-
-
-
-
-
-
-
-
-
       })
-    }, 0)
-    // }, 800)
+    // }, 0)
+    }, 800)
 
-  // }, 9000)  
-  }, 0)
+  }, 9000)  
+  // }, 0)
 
 })
