@@ -18,7 +18,7 @@ video{
 }
 .videoFrame{
   display: block;
-  /* videoのheight/2+10、videoの親のwidthー左*2/2+10 */
+  /* videoのheight/2+10、videoFrameの親はvideoの+20 */
   border-width: 75px 70px;
   border-style: solid;
   border-top-color: rgb(155, 155, 155);
@@ -43,7 +43,7 @@ video{
   overflow: hidden;
 
 
-  /* display: none; */
+  display: none;
 
 
 
@@ -91,7 +91,7 @@ video{
   position: relative;
 
 
-  display: none;
+  /* display: none; */
 
 
  
@@ -103,19 +103,19 @@ video{
   transform: rotate(0deg);
   z-index: 100;
 }
-.underCircle, .upperCircle{
+#underCircle, #upperCircle{
   position: absolute;
   border-radius: 50%;
   transform: translateX(-50%) translateY(-50%);
   top: 50%;
   left: 50%;
 }
-.underCircle{
+#underCircle{
   background: linear-gradient(to top, #fff2ad 0%, #a3bce2 100%);
   width: 83%;
   height: 83%;
 } 
-.upperCircle{
+#upperCircle{
   box-shadow: 0px 0px 90px 160px black;
   background-color: black;
   width: 71%;
@@ -192,6 +192,14 @@ nav{
   color: white;
   z-index: 100;
 }
+#logo_container{
+  position: fixed;
+  bottom: 8%;
+  left: 5%;
+  z-index: 1000;
+  height: 10px;
+  width: 100px;
+}
 .logo{
   position: absolute;
   font-size: 25px;
@@ -204,12 +212,12 @@ nav{
   font-family: 'Homemade Apple', cursive;
 }
 #logo1{
-  bottom: -17%;
-  left: 20px;
+  bottom: 26px;
+  left: 0;
 }
 #logo2{
-  bottom: -22%;
-  left: 75px;
+  bottom: 0;
+  left: 56px;
 }
 nav > ul > li{
   height: 65px;
@@ -452,7 +460,7 @@ nav > ul > li{
 
 #li6{
   font-size: 0;
-  width: 57vw;
+  /* width: 57vw; */
 }
 .skillOpening{
   height: 100vh;
