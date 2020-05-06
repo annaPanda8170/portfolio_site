@@ -548,7 +548,7 @@ $(function () {
         $("#upperCircle").css({width: "82%", height: "82%"})
       }else if(main_height > 1550) {
         $("#upperCircle").css({width: "76%", height: "76%"})
-      } else if (main_height <= 1550){
+      } else {
         $("#upperCircle").css({width: "71%", height: "71%"})
       }
       $window_width = $(window).width()
@@ -602,7 +602,7 @@ $(function () {
           $("#upperCircle").css({width: "82%", height: "82%"})
         }else if(main_height > 1550) {
           $("#upperCircle").css({width: "76%", height: "76%"})
-        } else if (main_height <= 1550){
+        } else{
           $("#upperCircle").css({width: "71%", height: "71%"})
         }
         $main.css({ right: $(window).outerWidth() * 0.62 });
