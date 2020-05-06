@@ -16,6 +16,10 @@
   }
 }
 @media screen and (max-width: 1024px){
+  #matrix{
+    left: 50%;
+    transform: translateX(-50%);
+  }
   .myInfoImage{
     width: 100%;
     float: none;
@@ -34,6 +38,11 @@
   }
 }
 @media screen and (max-width: 767px){
+  #matrix{
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
   video{
     width: 160px;
     height: 90px;
