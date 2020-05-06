@@ -1,0 +1,346 @@
+/* @media screen and (max-height: 830px){
+  #logo_container{
+    bottom: 100px;
+  }
+}
+@media screen and (max-height: 780px){
+  #logo_container{
+    bottom: 70px;
+  }
+}
+@media screen and (max-height: 740px){
+  #logo_container{
+    bottom: 35px;
+  }
+}
+@media screen and (max-height: 650px){
+  nav > ul > li{
+    height: 55px;
+  }
+  .listName{
+    font-size: 40px;
+  }
+}
+@media screen and (max-height: 550px){
+  nav > ul > li{
+    height: 45px;
+  }
+  .listName{
+    font-size: 33px;
+  }
+  #listName1{
+    font-size: 40px;
+  }
+}
+@media screen and (max-height: 500px){
+  #logo_container{
+    bottom: 25px;
+  }
+  .logo{
+    position: absolute;
+    font-size: 19px;
+  }
+  #logo1{
+    bottom: 22px;
+    left: 0;
+  }
+  #logo2{
+    bottom: 0;
+    left: 44px;
+  }
+}
+@media screen and (max-height: 450px){
+  #logo_container{
+    bottom: 10px;
+  }
+}
+@media screen and (max-height: 411px){
+  nav > ul > li{
+    height: 35px;
+  }
+  .listName{
+    font-size: 30px;
+  }
+  #listName1, #listName2, #listName3, #listName4, #listName5, #listName6, #listName7{
+    font-size: 30px;
+  }
+}
+@media screen and (max-height: 370px){
+  nav > ul > li{
+    height: 30px;
+  }
+  .listName{
+    font-size: 24px;
+  }
+  #listName1, #listName2, #listName3, #listName4, #listName5, #listName6, #listName7{
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 1250px){
+  .twitter, .or, #gmail{
+    text-align: center;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+  }
+  .twitter{
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+  }
+}
+@media screen and (max-width: 1000px){
+  .gameTitle, .applicationTitle, .homepageTitle, .gameGithub, .applicationGithub, .homepageGithub{
+    font-size: 20px;
+  }
+  .gameVTWrapper, .applicationVTWrapper, .homepageVTWrapper{
+    float: none;
+  }
+  .myInfoImage{x
+    width: 100%;
+    float: none;
+  }
+  #gmail{
+    font-size: 20px;
+  }
+  .twitter{
+    height: 60px;
+    width: 60px;
+  }
+  .fa-twitter-square{
+    font-size: 60px;
+  }
+  .skillOpeningImage{
+    width: 50px;
+  }
+  #skillOpeningImage1, #skillOpeningImage6, #skillOpeningImage7{
+    width: 70px;
+  }
+  .skillWrapper{
+    width: 100%;
+  }
+  #bapTitle{
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 800px){
+  video{
+    width: 180px;
+    height: 100px;
+  }
+  .videoFrame{
+    border-width: 60px 60px;
+  }
+  .li{
+    padding: 13px;
+    max-height: calc(100vh - 150px);
+  }
+  nav > ul > li {
+    height: 89px;
+    transform: rotate(-47deg);
+  }
+  #logo_container{
+    bottom: 15px;
+  }
+}
+@media screen and (max-width: 600px){
+  video{
+    width: 120px;
+    height: 65px;
+  }
+  .videoFrame{
+    border-width: 42.5px 42.5px;
+  }
+  .gameVTWrapper, .applicationVTWrapper, .homepageVTWrapper{
+    width: 140px;
+    margin-right: 0px;
+  }
+  nav > ul > li{
+    height: 55px;
+  }
+  .listName{
+    font-size: 20px;
+  }
+  #listName1{
+    font-size: 20px;
+  }
+  #logo_container{
+    bottom: 11px;
+  }
+  .logo{
+    position: absolute;
+    font-size: 18px;
+  }
+  #logo1{
+    bottom: 16px;
+    left: 0;
+  }
+  #logo2{
+    bottom: 0;
+    left: 44px;
+  }
+  .li{
+    box-shadow: 0px 0px 15px 25px rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+  }
+  .li-outer{
+    width: 58.5vw;
+  }
+  #li7{
+    padding: 40px 4px;
+  }
+  #gmail{
+    font-size: 15px;
+  }
+  .skillOpeningImage{
+    width: 30px;
+  }
+  #skillOpeningImage1, #skillOpeningImage6, #skillOpeningImage7{
+    width: 50px;
+  }
+  #skillOpeningImage3, #skillOpeningImage4{
+    top: 17%;
+  }
+  #skillOpeningImage7{
+    top: 12%;
+  }
+  .bapWrapper {
+    padding: 0 ;
+  }
+} */
+
+
+@media screen and (max-width: 1250px){
+  #li7{
+    display: block;
+  }
+  .twitter, .or, #gmail{
+    text-align: center;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+  }
+  .twitter{
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+  }
+}
+@media screen and (max-width: 1024px){
+  .myInfoImage{
+    width: 100%;
+    float: none;
+  }
+  .gameVTWrapper, .applicationVTWrapper, .homepageVTWrapper{
+    float: none;
+  }
+  .skillWrapper{
+    width: 100%;
+  }
+  #skillOpeningImage3, #skillOpeningImage4{
+    top: 17%;
+  }
+  #skillOpeningImage7{
+    top: 12%;
+  }
+}
+@media screen and (max-width: 767px){
+  video{
+    width: 160px;
+    height: 90px;
+  }
+  .videoFrame{
+    border-width: 55px 60px;
+  }
+  .gameVTWrapper, .applicationVTWrapper, .homepageVTWrapper{
+    width: 180px;
+    margin-right: 0px;
+  }
+  .li{
+    padding: 9px;
+    max-height: calc(100vh - 140px);
+    box-shadow: 0px 0px 20px 30px rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+  }
+  #logo_container{
+    bottom: 12px;
+  }
+  .logo{
+    font-size: 18px;
+  }
+  #logo1{
+    bottom: 16px;
+    left: 0;
+  }
+  #logo2{
+    bottom: 0;
+    left: 44px;
+  }
+  nav > ul > li {
+    height: 85px;
+    transform: rotate(-49.5deg);
+  }
+  nav{
+    top: 54%;
+  }
+  .columnMain{
+    display: none;
+  }
+  .arrow{
+    display: none;
+  }
+  .skillOpeningImage{
+    width: 50px;
+  }
+  #skillOpeningImage1, #skillOpeningImage6, #skillOpeningImage7{
+    width: 70px;
+  }
+  #underCircle{
+    display: none;
+  }
+  #gmail{
+    font-size: 18px;
+  }
+  .twitter{
+    height: 60px;
+    width: 60px;
+  }
+  .fa-twitter-square{
+    font-size: 60px;
+  }
+  #li7{
+    padding: 50px 2px;
+  }
+  #bapTitle{
+    font-size: 25px;
+  }
+  .gameTitle, .applicationTitle, .homepageTitle, .gameGithub, .applicationGithub, .homepageGithub{
+    font-size: 20px;
+  }
+  .bapWrapper {
+    padding: 0 ;
+  }
+  .bapQiita, .bapWrapper {
+    padding: 0 ;
+  }
+}
+@media screen and (max-width: 410px){
+  video{
+    width: 130px;
+    height: 75px;
+  }
+  .videoFrame{
+    border-width: 45px 55px;
+  }
+  .gameVTWrapper, .applicationVTWrapper, .homepageVTWrapper{
+    width: 150px;
+    margin-right: 0px;
+  }
+}
+@media screen and (max-height: 730px){
+  nav > ul > li {
+    height: 63px;
+  }
+}
